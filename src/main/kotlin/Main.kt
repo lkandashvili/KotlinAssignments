@@ -1,8 +1,6 @@
 fun main(args: Array<String>) {
-    val s:IntArray = ex1(1,50)
-    for (i:Int in s) {
-        println(i)
-     }
+
+    println(ex2(123456, 2))
 
 }
 
@@ -37,3 +35,12 @@ fun checkIfPalindrome(num:Int) :Boolean {
 
 //                                     //
 
+fun ex2(number: Int, k: Int) :Int {
+    var ans: Int
+
+    var s:String = number.toString()
+    s = s.dropLast(k)
+    ans = s.toInt()
+
+    return ans
+}
