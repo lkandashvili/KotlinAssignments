@@ -1,6 +1,9 @@
 fun main(args: Array<String>) {
 
-    println(ex2(123456, 2))
+    var s:IntArray = ex3(9)
+    for (i:Int in s) {
+        println(i)
+    }
 
 }
 
@@ -33,7 +36,7 @@ fun checkIfPalindrome(num:Int) :Boolean {
     return oI == reversedI
 }
 
-//                                     //
+//            დავალება 2              //
 
 fun ex2(number: Int, k: Int) :Int {
     var ans: Int
@@ -43,4 +46,32 @@ fun ex2(number: Int, k: Int) :Int {
     ans = s.toInt()
 
     return ans
+}
+
+//            დავალება 3              //
+
+fun ex3(n: Int) : IntArray {
+
+    var ans = IntArray(0)
+
+    for (i: Int in 1..n) {
+        if (n % i == 0 && checkIfSimple(i)) {
+            ans+=i
+        }
+    }
+    return ans
+}
+
+fun checkIfSimple(num: Int) :Boolean {
+    if (num <= 1) {
+        return false
+    }
+
+    for (i in 2 until num) {
+        if (num % i == 0) {
+            return false
+        }
+    }
+
+    return true
 }
